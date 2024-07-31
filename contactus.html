@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Healthcare Finance</title>
+    <style> /*css style*/
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #3498db 3px solid;
+        }
+        header h1 {
+            text-align: center;
+            margin: 0;
+            font-size: 36px;
+        }
+        .content {
+            padding: 30px;
+            background: #fff;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .content h2 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            line-height: 1.6;
+            color: #666;
+        }
+        .content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content ul li {
+            padding: 5px 0;
+            color: #333;
+        }
+        .content ul li:before {
+            color: #3498db;
+            margin-right: 10px;
+        }
+        .content form {
+            margin-top: 20px;
+        }
+        .content form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .content form input, .content form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .content form input[type="submit"] {
+            background: #3498db;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            font-size: 16px;
+        }
+        .content form input[type="submit"]:hover {
+            background: #2980b9;
+        }
+        .content .success-message, .content .error-message {
+            display: none;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .content .success-message {
+            background: #dff0d8;
+            color: #3c763d;
+        }
+        .content .error-message {
+            background: #f2dede;
+            color: #a94442;
+        }
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #2c3e50;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .map-container {
+            margin-top: 20px;
+        }
+        .map-container iframe {
+            width: 100%;
+            border: 0;
+            border-radius: 5px;
+            height: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body> 
+    <header>
+        <div class="container">
+
+            <h1>Healthcare Finance</h1> 
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or require further assistance, please feel free to contact us using the information below or by submitting your enquiry through the contact form.</p>
+            <h3>Contact Information</h3>
+            <p><strong>Phone Numbers:</strong></p>
+            <ul>
+                <li>Main Office: +65 9876 5432</li>
+                <li>Customer Support: +65 9123 4567</li>
+            </ul>
+            <p><strong>Email Addresses:</strong></p>
+            <ul>
+                <li>General Inquiries: info@healthcarefinance.com</li>
+                <li>Customer Support: support@healthcarefinance.com</li>
+            </ul>
+            <p><strong>Physical Address:</strong></p>
+            <ul>
+                <li>Healthcare Finance Inc.</li>
+                <li>123 Finance St.</li>
+                <li>Health City, 123456</li>
+            </ul>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093746!2d144.9537363153167!3d-37.81627974202159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5773e2c0fbd7c74!2s123+Finance+St%2C+Health+City%2C+123456!5e0!3m2!1sen!2sus!4v1614392601765!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <h3>Contact Form</h3>
+            <form id="contact-form" action="/submit_contact_form" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" aria-required="true" required>
+               
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" aria-required="true" required>
+               
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" aria-required="true" required>
+               
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" aria-required="true" required></textarea>
+               
+                <input type="submit" value="Submit">
+            </form>
+            <div class="success-message">Thank you for your message. We will get back to you shortly.</div>
+            <div class="error-message">There was an error submitting your message. Please try again.</div>
+        </div>
+    </div>
+    <footer>
+        <p>Healthcare Finance</p>
+    </footer>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Mock form submission and display success or error message
+            const successMessage = document.querySelector('.success-message');
+            const errorMessage = document.querySelector('.error-message');
+            successMessage.style.display = 'block';
+            errorMessage.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
+ 
